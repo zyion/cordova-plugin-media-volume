@@ -13,5 +13,9 @@
     "cordova-android"
   ],
   "author": "Zyion",
-  "license": "Apache 2.0 License"
+  "license": "Apache 2.0 License",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zyion/cordova-plugin-media-volume.git"
+  },
 }
