@@ -1,0 +1,17 @@
+{
+  "name": "com.zyion.mediavolume",
+  "version": "0.1.0",
+  "description": "Cordova Media Volume Control plugin",
+  "cordova": {
+    "id": "com.zyion.mediavolume",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Zyion",
+  "license": "Apache 2.0 License"
+}
