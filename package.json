@@ -1,21 +1,21 @@
 {
-  "name": "com.zyion.mediavolume",
-  "version": "0.1.0",
-  "description": "Cordova Media Volume Control plugin",
-  "cordova": {
-    "id": "com.zyion.mediavolume",
-    "platforms": [
-      "android"
-    ]
-  },
-  "keywords": [
-    "ecosystem:cordova",
-    "cordova-android"
-  ],
-  "author": "Zyion",
-  "license": "Apache 2.0 License",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zyion/cordova-plugin-media-volume.git"
-  }
+    "name": "net.zyion.mediavolume",
+    "version": "0.1.0",
+    "description": "Cordova Media Volume Control plugin",
+    "cordova": {
+        "id": "net.zyion.mediavolume",
+        "platforms": [
+            "android"
+        ]
+    },
+    "keywords": [
+        "ecosystem:cordova",
+        "cordova-android"
+    ],
+    "author": "Zyion",
+    "license": "Apache 2.0 License",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/zyion/cordova-plugin-media-volume.git"
+    }
 }
