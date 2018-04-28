@@ -18,6 +18,15 @@ module.exports = {
             else exec(resolve, reject, PLUGIN_NAME, 'set', [vol]);
         });
     },
+    setVolume: function (volume) {
+        return new Promise (function (resolve, reject) {
+            var vol = parseFloat(volume);
+            if (isNaN(vol)) reject('Error! supplied value is not a decimal: ' + volume);
+            else if (vol < 0) reject('Error! cannot set negative volume: ' + volume);
+            else if (vol > 1) reject('Error! cannot set volume greater than 1.0: ' + volume);
+            else exec(resolve, reject, PLUGIN_NAME, 'setVolume', [vol]);
+        });
+    },
     up: function () {
         return new Promise(function (resolve, reject) {
             exec(resolve, reject, PLUGIN_NAME, 'up', []);

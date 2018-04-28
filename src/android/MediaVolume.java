@@ -32,6 +32,10 @@ public class MediaVolume extends CordovaPlugin {
             return true;
         }
         else if (action.equals("set")) {
+            set(args, callbackContext);
+            return true;
+        }
+        else if (action.equals("setVolume")) {
             setVolume(args, callbackContext);
             return true;
         }
@@ -76,6 +80,22 @@ public class MediaVolume extends CordovaPlugin {
     }
 
     private void setVolume(JSONArray args, final CallbackContext callbackContext) throws JSONException {
+        AudioManager audioManager = (AudioManager) this.cordova.getActivity().getSystemService(Context.AUDIO_SERVICE);
+
+        int max = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+        double volume = args.getDouble(0);
+        if (volume > 1d) volume = 1d;
+        if (volume < 0d) volume = 0d;
+        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, (int)(max * volume), AudioManager.FLAG_SHOW_UI);
+
+        JSONObject obj = new JSONObject();
+        obj.put("volume", new Integer(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)));
+        obj.put("muted", new Boolean(audioManager.isStreamMute(AudioManager.STREAM_MUSIC)));
+
+        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, obj));
+    }
+
+    private void set(JSONArray args, final CallbackContext callbackContext) throws JSONException {
         AudioManager audioManager = (AudioManager) this.cordova.getActivity().getSystemService(Context.AUDIO_SERVICE);
 
         int max = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
